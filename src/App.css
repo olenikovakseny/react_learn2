@@ -2,7 +2,10 @@
   text-align: center;
 }
 img{
-  width: 300px;
+  width: 200px;
+}
+.block{
+  padding-left: 120px;
 }
 .App-logo {
   height: 40vmin;

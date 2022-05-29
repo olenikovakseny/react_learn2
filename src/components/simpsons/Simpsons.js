@@ -74,7 +74,7 @@ let simpsons = [
 ];
 export default function Simpsons() {
     return (
-        <div>
+        <div class="block">
             {
                 simpsons.map((value, index) => <Simpson key={index} item={value} />)
             }
