@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import User from './components/user/User';
 
 
 
-function App() {
+export default function App() {
   
   let [users, setUsers] = useState([]);
 
@@ -20,11 +21,10 @@ function App() {
   return (
     <div>
       {
-        users.map(value => {return <div key={value.id}>{value.id} - {value.name}</div>;})
+        users.map(value => <User key={value.id} item = {value}/>)
       }
 
     </div>
   );
 }
 
-export default App;
