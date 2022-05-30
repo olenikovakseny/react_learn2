@@ -1,11 +1,21 @@
+import { useEffect, useState } from 'react';
 import './App.css';
-import Simpsons from './components/simpsons/Simpsons';
+
 
 
 function App() {
+  
+  let [x, setx] = useState(0);
+  useEffect(() => {
+    console.log('effect');
+  }, [x]);
+  
   return (
     <div>
-      <Simpsons/>
+     <button onClick={() => {
+       setx(++x);
+     }}>button</button>
+
     </div>
   );
 }
