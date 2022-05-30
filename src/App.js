@@ -8,14 +8,16 @@ import { getUsers } from './services/api';
 export default function App() {
   
   let [users, setUsers] = useState([]);
+  let [user, setUser] = useState(null);
   useEffect(() => {
    
     getUsers().then(value => setUsers([...value.data]));
 
   }, []);
   
-const choose =(id) =>{
-  console.log(id);
+const choose = (id) => {
+  let choosenUser = users.find(value => value.id === id);
+  setUser(choosenUser);
 };
 
   return (
@@ -24,6 +26,9 @@ const choose =(id) =>{
         users.map(value => <User key={value.id} item = {value} choose={choose}/>)
       }
 
+      {
+        user && <div>{user.id} - {user.name}</div>
+      }
     </div>
   );
 }
