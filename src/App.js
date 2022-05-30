@@ -14,10 +14,14 @@ export default function App() {
 
   }, []);
   
+const choose =(id) =>{
+  console.log(id);
+};
+
   return (
     <div>
       {
-        users.map(value => <User key={value.id} item = {value}/>)
+        users.map(value => <User key={value.id} item = {value} choose={choose}/>)
       }
 
     </div>
